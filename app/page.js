@@ -1,6 +1,6 @@
 import React from 'react'
 import ConnectWallet from './components/ConnectWallet'
-import MintButton from './components/mintNft'
+import MintButton from './components/MintButton'
 
 function page() {
   return (

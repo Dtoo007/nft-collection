@@ -1,13 +1,13 @@
+
 "use client";
 
 import { useState } from "react";
 import { ethers } from "ethers";
 import { getContract } from "@/app/utils/MyNFTCollection";
 
-export default function MintButton({ mintPrice = "0.01" }) {
-  const [isMinting, setIsMinting] = useState(false);
 
-  const mintNFT = async () => {
+
+ export const mintNFT = async (mintPrice, setIsMinting) => {
     if (!window.ethereum) return alert("Please install MetaMask");
 
     try {
@@ -31,21 +31,4 @@ export default function MintButton({ mintPrice = "0.01" }) {
     }
   };
 
-  return (
-    <button
-      onClick={mintNFT}
-      disabled={isMinting}
-      style={{
-        padding: "12px 24px",
-        fontSize: "16px",
-        background: isMinting ? "#888" : "#111",
-        color: "#fff",
-        borderRadius: "8px",
-        cursor: isMinting ? "not-allowed" : "pointer",
-        border: "none",
-      }}
-    >
-      {isMinting ? "Minting..." : `Mint NFT (${mintPrice} ETH)`}
-    </button>
-  );
-}
+

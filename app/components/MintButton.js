@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { mintNFT } from "@/app/components/mintNft";
+import { mintNFT } from "@/app/utils/mintNFT"; // Adjust the path to your mintNFT function
 
-export default function MintButton({ mintPrice = "0.01" }) {
+export default function MintButton({ mintPrice = "0.001" }) {
   const [isMinting, setIsMinting] = useState(false);
 
   return (
     <button
-      onClick={mintNFT}
+      onClick={() => mintNFT(mintPrice, setIsMinting)}
       disabled={isMinting}
       style={{
         padding: "12px 24px",
